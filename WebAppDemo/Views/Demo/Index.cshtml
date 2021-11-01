@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Demo Index</h1>
+
+<h3>Multi table 1 to 10</h3>
+<table id="mathTable">
+    <tbody>
+        @for (int y = 1; y <= 10; y++)
+        {
+            <tr>
+                @for (int x = 1; x <= 10; x++)
+                {
+                    <td>@(y*x)</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
