@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Custom Multi-Tabel";
+}
+
+<h1>Custom Multi-Tabel</h1>
+
+@if (ViewBag.UserMulti != null && ViewBag.UserMulti is double)
+{
+    <table id="mathTable">
+        <tbody>
+                <tr>
+                    @for (int x = 1; x <= 10; x++)
+                    {
+                        <td>@(x*(double)ViewBag.UserMulti)</td>
+                    }
+                </tr>       
+        </tbody>
+    </table>
+}

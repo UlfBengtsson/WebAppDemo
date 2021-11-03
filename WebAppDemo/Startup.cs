@@ -33,7 +33,7 @@ namespace WebAppDemo
 
             app.UseEndpoints(endpoints =>
             {
-
+                //endpoints act like a if/else chain, first one that is true is the one to be used!
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
