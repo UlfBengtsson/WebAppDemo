@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Titel = "ToDo";
+}
+
+<h1>ToDo for the next 20mins</h1>
+
+<p>Current ToDo Text: @ViewBag.SessionText</p>
+
+<form asp-action="AddToDo">
+    <label for="toDo">ToDo text:</label>
+    <input type="text" id="toDo" name="toDo" />
+
+    <input type="submit" value="Add ToDo text" />
+</form>
