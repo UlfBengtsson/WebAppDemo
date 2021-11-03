@@ -34,6 +34,7 @@ namespace WebAppDemo.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult AddToDo(string toDo)
         {
             if (!string.IsNullOrWhiteSpace(toDo))
@@ -44,5 +45,29 @@ namespace WebAppDemo.Controllers
             //return RedirectToAction("ToDoSession");//same as line below
             return RedirectToAction(nameof(ToDoSession));
         }
+
+        public IActionResult PreferdLanguageCookie()
+        {
+            string lang = Request.Cookies["PrefLang"]; ;//read cookie
+            if (!string.IsNullOrWhiteSpace(lang))
+            {
+                ViewBag.Lang = lang;
+            }
+            return View();
+        } 
+        
+        public IActionResult SetLanguageCookie(string lang)
+        {
+            if (!string.IsNullOrWhiteSpace(lang))
+            {
+                //Add cookie to Response object
+                CookieOptions option = new CookieOptions();
+                option.Expires = DateTime.Now.AddMinutes(1);
+                Response.Cookies.Append("PrefLang", lang, option);
+            }
+            return RedirectToAction(nameof(PreferdLanguageCookie));
+        }
+
+
     }
 }
