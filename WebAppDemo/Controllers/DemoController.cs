@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAppDemo.Models;
 
 namespace WebAppDemo.Controllers
 {
@@ -58,6 +59,7 @@ namespace WebAppDemo.Controllers
         
         public IActionResult SetLanguageCookie(string lang)
         {
+            
             if (!string.IsNullOrWhiteSpace(lang))
             {
                 //Add cookie to Response object
